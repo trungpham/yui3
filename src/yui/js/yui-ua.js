@@ -31,7 +31,7 @@
 * @param {String} [subUA=navigator.userAgent] UA string to parse
 * @return {Object} The Y.UA object
 */
-YUI.Env.parseUA = function(subUA) {
+Y.Env.parseUA = function(subUA) {
 
     var numberify = function(s) {
             var c = 0;
@@ -443,7 +443,7 @@ YUI.Env.parseUA = function(subUA) {
             }
         }
 
-        YUI.Env.UA = o;
+        Y.Env.UA = o;
 
     }
 
@@ -451,7 +451,7 @@ YUI.Env.parseUA = function(subUA) {
 };
 
 
-Y.UA = YUI.Env.UA || YUI.Env.parseUA();
+Y.UA = Y.Env.UA || Y.Env.parseUA();
 
 /**
 Performs a simple comparison between two version numbers, accounting for

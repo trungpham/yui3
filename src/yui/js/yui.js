@@ -8,8 +8,8 @@ utilities for the library.
 @submodule yui-base
 **/
 
-if (typeof YUI != 'undefined') {
-    YUI._YUI = YUI;
+if (typeof @YUIGLOBALVAR@ != 'undefined') {
+    @YUIGLOBALVAR@._YUI = @YUIGLOBALVAR@;
 }
 
 /**
@@ -55,7 +55,7 @@ available.
 
     /*global YUI*/
     /*global YUI_config*/
-    var YUI = function() {
+    var @YUIGLOBALVAR@ = function() {
         var i = 0,
             Y = this,
             args = arguments,
@@ -63,10 +63,10 @@ available.
             instanceOf = function(o, type) {
                 return (o && o.hasOwnProperty && (o instanceof type));
             },
-            gconf = (typeof YUI_config !== 'undefined') && YUI_config;
+            gconf = (typeof @YUIGLOBALVAR@_config !== 'undefined') && @YUIGLOBALVAR@_config;
 
-        if (!(instanceOf(Y, YUI))) {
-            Y = new YUI();
+        if (!(instanceOf(Y, @YUIGLOBALVAR@))) {
+            Y = new @YUIGLOBALVAR@();
         } else {
             // set up the core environment
             Y._init();
@@ -96,8 +96,8 @@ available.
             @global
             @static
             **/
-            if (YUI.GlobalConfig) {
-                Y.applyConfig(YUI.GlobalConfig);
+            if (@YUIGLOBALVAR@.GlobalConfig) {
+                Y.applyConfig(@YUIGLOBALVAR@.GlobalConfig);
             }
 
             /**
@@ -152,7 +152,7 @@ available.
         return Y;
     };
 
-(function() {
+(function(YUI) {
 
     var proto, prop,
         VERSION = '@VERSION@',
@@ -1496,7 +1496,7 @@ Y.log('Fetching loader: ' + config.base + config.loaderPath, 'info', 'yui');
         exports.YUI = YUI;
     }
 
-}());
+}(@YUIGLOBALVAR@));
 
 
 /**
