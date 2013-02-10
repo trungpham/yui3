@@ -20,7 +20,7 @@ Object.keys(data).sort().forEach(function(m) {
     }
 });
 
-var str = 'Y.Env.aliases = {\n';
+var str = '@YUIGLOBALVAR@.Env.aliases = {\n';
 var o = [];
 Object.keys(meta).forEach(function(name) {
     var mod = meta[name];

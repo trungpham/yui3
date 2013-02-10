@@ -1,5 +1,8 @@
 {
     "name": "yui",
+    "shifter": {
+        "replace-yuiglobalvar": "YUI"
+    },
     "prebuilds": [
         "get",
         "loader"

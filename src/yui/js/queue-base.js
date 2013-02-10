@@ -83,5 +83,5 @@ Queue.prototype = {
 
 Y.Queue = Queue;
 
-Y.Env._loaderQueue = Y.Env._loaderQueue || new Queue();
+@YUIGLOBALVAR@.Env._loaderQueue = @YUIGLOBALVAR@.Env._loaderQueue || new Queue();
 
